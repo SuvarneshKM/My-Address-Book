@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
 
 <h2>Edit Address</h2>
 <br/>
@@ -50,7 +51,9 @@
 	<input type="hidden" value="{{ get_address.id }}" name="id">
 	<button type="submit" class="btn btn-secondary">Delete Address</button>
 </form>
-
-
+{% else %}
+  You're not allowed here! (and you know it...)
 {% endif %}
+{% endif %}
+
 {% endblock %}

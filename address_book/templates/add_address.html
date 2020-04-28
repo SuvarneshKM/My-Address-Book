@@ -2,6 +2,7 @@
 
 
 {% block content %}
+{% if user.is_authenticated %}
 	<h1>Add Address...</h1>
 <br/>
 	<form method="POST">
@@ -37,5 +38,7 @@
 <br/>
 	  <button type="submit" class="btn btn-secondary">Add Address</button>
 	</form>
-
+{% else %}
+	You're not allowed here! (and you know it...)
+{% endif %}	
 {% endblock %}
